@@ -21,20 +21,22 @@ export function fetchSuccess(data) {
   };
 }
 
-export function fetchPokemon() {
+export function fetchPokemon(limit) {
   return (dispatch) => {
     dispatch(fetchLoading(true));
 
-    fetch('http://pokeapi.salestock.net/api/v2/pokemon')
+    fetch(`http://pokeapi.salestock.net/api/v2/pokemon?limit=${limit}`)
       .then((res) => {
         if (!res.ok) {
           throw Error(res.statusText);
         }
-
         dispatch(fetchLoading(false));
         return res.json();
       })
-      .then(data => dispatch(fetchSuccess(data.results)))
+      .then((data) => {
+        const pokemon = data.results.map((x, i) => ({ id: i + 1, img: `/sprites/${i + 1}.png`, ...x }));
+        dispatch(fetchSuccess(pokemon));
+      })
       .catch(() => dispatch(fetchErrored(true)));
   };
 }

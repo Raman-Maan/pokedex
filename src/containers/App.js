@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Navigation from '../components/Navigation';
-import Main from './Main';
+import Pokedex from './Pokedex';
 
 export default () => (
   <div className="App">
     <Navigation />
-    <Main />
+    <Pokedex />
   </div>
 );
