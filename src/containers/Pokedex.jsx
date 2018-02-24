@@ -4,6 +4,7 @@ import { Container, Modal } from 'reactstrap';
 import { fetchPokemon, setSelected, clearSelected } from '../actions';
 
 import PokemonCard from '../components/PokemonCard';
+import PokemonDetails from '../components/PokemonDetails';
 
 class Pokedex extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Pokedex extends Component {
 
     const popup = selected !== null ? (
       <Modal isOpen toggle={() => this.props.deselectPokemon()}>
-        <h1>Yo</h1>
+        <PokemonDetails {...pokemon[selected]} />
       </Modal>
     ) : '';
 
@@ -25,7 +26,6 @@ class Pokedex extends Component {
       <div className="Pokedex">
         {popup}
         <Container>
-          <h1>Hello</h1>
           {pokemon.map((x, i) => (
             <PokemonCard key={x.id} onClick={() => this.props.selectPokemon(i)} {...x} />
           ))}
