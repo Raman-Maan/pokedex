@@ -1,0 +1,95 @@
+@import '../assets/_bootstrap/overrides/variables';
+
+$height: 200px;
+$width: 200px;
+$border-radius: 5%;
+$border-size: 2px;
+$margin: 0.375rem;
+$id-spacing: 0.125rem;
+
+$card-bg-color: $white;
+$card-focus-color: $primary;
+$card-bg-color-active: lighten($card-focus-color, 30%);
+
+$box-shadow: 3px 3px 5px 0px rgba($dark, 0.20);
+$box-shadow-active: 4px 4px 7px 0px rgba($dark, 0.30);
+
+.poke-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: $height;
+  width: $width;
+  margin: $margin;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  border: $border-size solid $dark;
+  border-radius: $border-radius;
+  background-color: $card-bg-color;
+  box-shadow: $box-shadow;
+
+  transition: all 150ms ease-in-out;
+
+  .id {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+
+    line-height: inherit;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 2em;
+    width: 2em;
+
+    background-color: $card-focus-color;
+    color: $white;
+    font-weight: bold;
+
+    margin: $id-spacing;
+    padding: $id-spacing*2;
+
+    border-radius: 50%;
+  }
+
+  .image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    img {
+      object-fit: contain;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .name {
+    border-top: $border-size solid $black;
+    color: $white;
+    background-color: $card-focus-color;
+    height: 25%;
+    width: 100%;
+
+    text-transform: capitalize;
+    h5 {
+      font-weight: bold;
+    }
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: $card-bg-color-active;
+    box-shadow: $box-shadow-active;
+  }
+}

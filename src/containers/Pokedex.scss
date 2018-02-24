@@ -1,2 +1,12 @@
 @import '../assets/_bootstrap/overrides/variables';
 
+.container {
+  ul {
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

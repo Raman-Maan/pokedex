@@ -6,6 +6,8 @@ import { fetchPokemon, setSelected, clearSelected } from '../actions';
 import PokemonCard from '../components/PokemonCard';
 import PokemonDetails from '../components/PokemonDetails';
 
+import './Pokedex.css';
+
 class Pokedex extends Component {
   constructor(props) {
     super(props);
@@ -26,9 +28,11 @@ class Pokedex extends Component {
       <div className="Pokedex">
         {popup}
         <Container>
-          {pokemon.map((x, i) => (
-            <PokemonCard key={x.id} onClick={() => this.props.selectPokemon(i)} {...x} />
-          ))}
+          <ul>
+            {pokemon.map((x, i) => (
+              <PokemonCard key={x.id} onClick={() => this.props.selectPokemon(i)} {...x} />
+            ))}
+          </ul>
         </Container>
       </div>
     );
