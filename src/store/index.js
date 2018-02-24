@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 
 function logger({ getState }) {
-  return next => action => {
+  return next => (action) => {
     console.group(action.type);
     console.info('dispatching:', action);
     const result = next(action);
@@ -13,7 +13,11 @@ function logger({ getState }) {
   };
 }
 
-const initialState = {};
+const initialState = {
+  pokemon: [],
+  selected: null,
+};
+
 const enhancers = [];
 const middleware = [thunk, logger];
 
