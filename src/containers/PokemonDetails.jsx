@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Badge, Progress } from 'reactstrap';
 import { fetchPokemonDetails } from '../actions';
 
+import Loader from '../components/Loader';
+
 import './PokemonDetails.css';
 
 class PokemonDetails extends Component {
@@ -24,7 +26,7 @@ class PokemonDetails extends Component {
       </div>
     ) : (loading || !details) ? (
       <div className="details">
-        <p>Loading...</p>
+        <Loader />
       </div>
     ) : (
       <div className="details">
