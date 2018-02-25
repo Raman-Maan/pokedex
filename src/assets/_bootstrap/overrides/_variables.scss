@@ -31,3 +31,24 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 $modal-backdrop-opacity:      .8;
+
+$theme-colors: (
+  "normal": #aaa974,
+  "fighting": #c52c1a,
+  "flying": #a992f5,
+  "poison": #a33ea5,
+  "ground": #e3c15d,
+  "rock": #bba11d,
+  "bug": #aab900,
+  "ghost": #70589c,
+  "steel": #b9bad3,
+  "fire": #f4800e,
+  "water": #6492f6,
+  "grass": #75c93e,
+  "electric": #fad100,
+  "psychic": #fc5789,
+  "ice": #96d9da,
+  "dragon": #6f39ff,
+  "dark": #715744,
+  "fairy": #ff65da
+);

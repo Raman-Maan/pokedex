@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 
 import './PokemonCard.css';
 
@@ -7,7 +6,7 @@ export default ({
   id, name, img, onClick,
 }) => (
   <div className="poke-card" onClick={onClick}>
-    <p className="id">{id}</p>
+    <p className="id">#{id}</p>
     <div className="image">
       <img src={img} alt="" />
     </div>

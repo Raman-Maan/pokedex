@@ -47,8 +47,7 @@ export function fetchPokemonDetails(id) {
         return res.json();
       })
       .then((data) => {
-        const details = data;
-        dispatch(detailsSuccess(details));
+        dispatch(detailsSuccess(data));
       })
       .catch(() => dispatch(detailsErrored(true)));
   };

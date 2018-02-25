@@ -16,8 +16,14 @@
   //override inline styles
   display: flex !important;
   align-items: center;
+  overflow: hidden;
 
   .modal-dialog {
     flex: 1;
+  }
+  
+  .modal-content {
+    background-color: transparent;
+    border: none;
   }
 }
