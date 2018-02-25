@@ -14,11 +14,19 @@ class Pokedex extends Component {
     super(props);
 
     this.props.fetchPokemon(151);
+    this.state = {
+      pokemon: this.props.pokemon,
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ pokemon: nextProps.pokemon });
   }
 
   render() {
+    const { pokemon } = this.state;
     const {
-      loading, error, pokemon, selected,
+      loading, error, selected,
     } = this.props;
 
     const popup = selected !== null ? (
