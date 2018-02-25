@@ -5,6 +5,7 @@ import { fetchPokemon, setSelected, clearSelected } from '../actions';
 
 import PokemonCard from '../components/PokemonCard';
 import PokemonDetails from './PokemonDetails';
+import Loader from '../components/Loader';
 
 import './Pokedex.css';
 
@@ -16,13 +17,31 @@ class Pokedex extends Component {
   }
 
   render() {
-    const { pokemon, selected } = this.props;
+    const {
+      loading, error, pokemon, selected,
+    } = this.props;
 
     const popup = selected !== null ? (
       <Modal isOpen toggle={() => this.props.deselectPokemon()}>
         <PokemonDetails {...pokemon[selected]} />
       </Modal>
     ) : '';
+
+    if (error) {
+      return (
+        <h1>
+          There was an error loading pokemon from the API
+        </h1>
+      );
+    }
+
+    if (loading) {
+      return (
+        <div className="load">
+          <Loader />
+        </div>
+      );
+    }
 
     return (
       <div className="Pokedex">
