@@ -10,3 +10,14 @@
     justify-content: space-between;
   }
 }
+
+// center the modal
+.modal.fade.show {
+  //override inline styles
+  display: flex !important;
+  align-items: center;
+
+  .modal-dialog {
+    flex: 1;
+  }
+}

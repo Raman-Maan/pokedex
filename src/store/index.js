@@ -16,6 +16,7 @@ function logger({ getState }) {
 const initialState = {
   pokemon: [],
   selected: null,
+  details: null,
 };
 
 const enhancers = [];

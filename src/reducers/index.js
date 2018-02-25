@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { pokemon, pokemonErrored, pokemonLoading } from './pokemon';
-import selected from './selected';
+import { selected, details, detailsErrored, detailsLoading } from './selected';
 
 export default combineReducers({
   pokemon,
@@ -9,4 +9,7 @@ export default combineReducers({
   pokemonLoading,
 
   selected,
+  details,
+  detailsErrored,
+  detailsLoading,
 });

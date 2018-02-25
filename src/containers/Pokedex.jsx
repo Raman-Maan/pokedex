@@ -44,6 +44,7 @@ const mapStateToProps = state => ({
   error: state.pokemonErrored,
   loading: state.pokemonLoading,
   selected: state.selected,
+  det: state.details,
 });
 
 const mapDispatchToProps = dispatch => ({
