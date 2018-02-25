@@ -24,9 +24,9 @@ class Pokedex extends Component {
   }
 
   render() {
-    const { pokemon } = this.state;
+    let { pokemon } = this.state;
     const {
-      loading, error, selected,
+      loading, error, selected, filter,
     } = this.props;
 
     const popup = selected !== null ? (
@@ -51,6 +51,11 @@ class Pokedex extends Component {
       );
     }
 
+    if (filter) {
+      const regex = new RegExp(filter, 'i');
+      pokemon = pokemon.filter(x => x.name.match(regex) || x.id.toString().match(regex));
+    }
+
     return (
       <div className="Pokedex">
         {popup}
@@ -71,7 +76,7 @@ const mapStateToProps = state => ({
   error: state.pokemonErrored,
   loading: state.pokemonLoading,
   selected: state.selected,
-  det: state.details,
+  filter: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({

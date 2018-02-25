@@ -17,6 +17,7 @@ const initialState = {
   pokemon: [],
   selected: null,
   details: null,
+  filter: null,
 };
 
 const enhancers = [];
