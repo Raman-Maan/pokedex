@@ -43,6 +43,7 @@ module.exports = {
         ],
         "eol-last": [
             "error", "always"
-        ]
+        ],
+        "no-nested-ternary": [0]
     }
 };

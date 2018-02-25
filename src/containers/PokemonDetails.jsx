@@ -18,7 +18,11 @@ class PokemonDetails extends Component {
       id, name, img, loading, error, details,
     } = this.props;
 
-    const detailsSection = (loading || !details) ? (
+    const detailsSection = error ? (
+      <div className="details">
+        <p>There was an error getting details from API</p>
+      </div>
+    ) : (loading || !details) ? (
       <div className="details">
         <p>Loading...</p>
       </div>

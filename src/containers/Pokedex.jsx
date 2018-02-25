@@ -4,7 +4,7 @@ import { Container, Modal } from 'reactstrap';
 import { fetchPokemon, setSelected, clearSelected } from '../actions';
 
 import PokemonCard from '../components/PokemonCard';
-import PokemonDetails from '../components/PokemonDetails';
+import PokemonDetails from './PokemonDetails';
 
 import './Pokedex.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navigation from '../components/Navigation';
-import Pokedex from './Pokedex';
+import Navigation from './Navigation';
+import Pokedex from '../containers/Pokedex';
 
 export default () => (
   <div className="App">
